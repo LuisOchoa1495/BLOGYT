@@ -1,0 +1,57 @@
+<!-- head para PC -->
+{% extends "entrada/base_entrada.html" %}
+
+{% load  static %}
+
+{% block title %}
+{{entry.title}}
+{% endblock title %}
+
+{% block description %}
+<meta name="description" content="{{entry.resume}}">
+{% endblock description %}
+
+{% block tags %}
+<meta name="keywords" content="
+    {% for t in entry.tag.all  %}
+        {{t.name}},
+    {% endfor %}
+">
+{% endblock tags %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+<div class="grid-container">
+    <div class="grid-x grid-margin-x" style="margin-top: 1em;">
+        <!-- bloque de contenido del articulo -->
+        <div class="cell small-12 large-9">
+            <h3 class="cell">✅{{entry.title}}</h3>
+            <p style="font-style: oblique 10deg;">📅{{entry.created}} </p>
+            <div class="cell callout primary">
+                <h5>📌Resumen:</h5>
+                <p>{{entry.resume}}</p>
+            </div>
+            <div>
+                <p>{{entry.content|safe}}</p>     
+        </div>
+            
+        </div>
+        <!-- FIN bloque de contenido del articulo -->
+
+        <!-- inicio del segundo bloque - categorias -->
+        <div class="cell small-12 large-3" style="height: 500px;">
+            <h5>📖Articulos relacionados</h5>
+            <ul class="vertical menu">
+                {% for a in articulos %} 
+                    {% if a.category == entry.category and a.title != entry.title %} 
+                        <li><a href="{% url 'entrada_app:entry-detail' a.slug %}">📄{{a.title}}</a></li>   
+                    {% endif %}             
+                {% endfor %}  
+            </ul>
+        </div>
+        <!-- FIN inicio del segundo bloque - categorias -->   
+    </div>
+</div>
+{% include "includes/footer.html" %}
+{% endblock content %}

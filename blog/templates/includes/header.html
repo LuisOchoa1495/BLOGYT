@@ -1,0 +1,39 @@
+<header>  
+    <div class="grid-x grid-margin-x header">
+        <div class="cell small-12 medium-4 large-3">
+            <img class="border-logo-header-2" src="https://yt3.googleusercontent.com/XZsl3Fgv7Gb-jcKauRj4ET5a-snDa9POirZhdZk3LGKlf4yR4fppeUIySlXLLDBQN8AEhZVV=s176-c-k-c0x00ffffff-no-rj" alt="">
+            <a href="{% url 'home_app:index' %}" style="font-size: 20px; color: #0277bd;">
+                    eighta blog
+            </a>
+        </div>
+        <div class="cell small-12 medium-4">
+            
+        </div>
+        <div class="cell small-12 large-5">
+            <ul class="menu" style="justify-content: flex-end;">
+                <li>
+                    <a href="{% url 'home_app:index' %}">Inicio</a>
+                </li>
+                <li>
+                    <a href="{% url 'entrada_app:entry-lista' %}">Publicaciones</a>
+                </li>
+                <li>
+                    <a href="{% url 'entrada_app:entry-lista' %}">Sobre Nostros</a>
+                </li>
+                <li>
+                    <a href=https://youtube.com/@_eighta class="button primary">Visita el canal🎬</a>
+                </li>
+                <!--OPCIONES DE LOGEO - USUARIO - INVITADO
+                <li>
+                    {% if not user.is_anonymous  %}
+                        <a href="{% url 'favoritos_app:perfil' %}" class="warning button">Perfil</a>
+                    {% else %}
+                        <a href="{% url 'users_app:user-login' %}" class="success button">Acceder</a>
+                    {% endif %}
+                    
+                </li>
+                -->
+            </ul>
+        </div>
+    </div>
+</header>

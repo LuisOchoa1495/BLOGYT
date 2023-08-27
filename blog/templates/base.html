@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+   <!--flotante redes sociales-->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<link rel="stylesheet" href="{% static 'css/social.css' %}">
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+  <title>{% block title %}{% endblock title %}</title>
+  {% block description %}{% endblock description %}
+  {% block tags %}{% endblock tags %}
+  {% block css %}{% endblock css %}
+</head>
+<body>
+  <div class="container-bar">
+    <input type="checkbox" id="btn-social">
+    <label for="btn-social" class="fa fa-play"></label>
+      <div class="icon-social">
+        <a href="#" class="fa fa-facebook">
+          <span id="title">Facebook</span>
+        </a>
+        <a href=https://youtube.com/@_eighta class="fa fa-youtube">
+          <span id="title">Youtube</span>
+        </a>
+        <a href="#" class="fa fa-twitter">
+          <span id="title">Twitter</span>
+        </a>
+        <a href=https://github.com/LuisOchoa1495 class="fa fa-github">
+          <span id="title">Github</span>
+        </a>
+        <a href=https://www.instagram.com/eighta.dev class="fa fa-instagram">
+          <span id="title">Instagram</span>
+        </a>
+      </div>
+    </div>
+  {% block content %}
+  {% endblock content %}
+
+  {% block js %}{% endblock js %}
+
+  <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
